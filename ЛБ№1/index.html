@@ -5,8 +5,65 @@
         <title>Сайт-портфоліо</title>
     </head>
     <body>
-        <header>header</header>
-        <div class="main">main</div>
-        <footer>footer</footer>
+        <div class="portfolio">
+            <h1 style="text-align: center;">My portfolio</h1>
+            <h2>- About me -</h2>
+            <p>
+                I`m Andrey Voduanov.<br>
+                I am a 4th year student at KHPCC College, studying software engineer.<br>
+                Also, speak some patterns, algorithms, programming languages, data structures.<br>
+                These are links to my social networks:</p>
+                <a href="https://github.com/Mysslim">Github<br></a>
+                <a href="https://www.instagram.com/shredd.or/">Instagram</a>
+            
+
+        </div>
+        <div class="form">
+            <h1>The quick brown fox...</h1>
+            <p>Family <input size="50"></p>
+
+            <select id="selectFont" multiple name="font[]" style="margin-left: 50px;" size="10" >
+                <option value="Arial Black">Arial Black</option>
+                <option value="Calibri">Calibri</option>
+                <option value="Gabriola">Gabriola</option>
+                <option value="Mv boli">Mv boli</option>
+                <option value="Playbill">Playbill</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="The Times New Roman">The Times New Roman</option>
+                <option value="Webdings">Webdings</option>
+                <option value="Wingding">Wingding</option>
+            </select>
+            
+            <p>Weight 
+                <input type="radio" id="RBmedium">
+                <label for="RBmedium">medium</label>
+           
+                <input type="radio" id="RBbold">
+                <label for="RBbold">bold</label>
+           
+                <input type="radio" id="RBdemibold">
+                <label for="RBdemibold">demibold</label>
+            </p>
+
+            <p>Slant 
+                <input type="radio" id="RBroman">
+                <label for="RBroman">roman</label>
+           
+                <input type="radio" id="RBitalic">
+                <label for="RBitalic">italic</label>
+           
+                <input type="radio" id="choice3">
+                <label for="choice3">demibold</label>
+            </p>
+
+            <p>
+                Size
+                <input id="quantity" type="number" min="1" max="100">
+            </p>
+            <p>
+                <button onclick="cancel()">Cancel</button>
+                <button onclick="ok()">Ok</button>
+            </p>
+        </div>
     </body>  
 </html>

@@ -1,24 +1,14 @@
 body {
     display: grid;
     grid-template-areas: 
-    "header"
-    "main"
-    "footer";
-
-    grid-template-rows: 5% 1fr 5%;
-
+    "portfolio" 
+    "form";
+    background-color: rgb(151, 145, 145);
     margin: 0;
 }
 
-.main {
-    background-color: green;
-    height: 100vh;
-}
-
-header {
-    background-color: black;
-}
-
-footer {
-    background-color: black;
+.portfolio {
+    text-align: center;
+    background-color: rgb(179, 176, 176);
+    padding-bottom: 10px;
 }
