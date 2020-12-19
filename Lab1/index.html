@@ -3,9 +3,13 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Сайт-портфоліо</title>
+        <script src ="js/cochCurve.js"></script>
+        <script src ="js/main.js"></script>
+
     </head>
+    <script>cochCurve()</script>
     <body>
-        <div class="portfolio">
+        <div id="portfolio" class="portfolio">
             <h1 style="text-align: center;">My portfolio</h1>
             <h2>- About me -</h2>
             <p>
@@ -15,55 +19,55 @@
                 These are links to my social networks:</p>
                 <a href="https://github.com/Mysslim">Github<br></a>
                 <a href="https://www.instagram.com/shredd.or/">Instagram</a>
-            
-
+                <br><br><img src=https://memax.club/wp-content/uploads/2019/05/53-50.jpg>
+                
         </div>
+
         <div class="form">
             <h1>The quick brown fox...</h1>
-            <p>Family <input size="50"></p>
-
-            <select id="selectFont" multiple name="font[]" style="margin-left: 50px;" size="10" >
-                <option value="Arial Black">Arial Black</option>
-                <option value="Calibri">Calibri</option>
-                <option value="Gabriola">Gabriola</option>
-                <option value="Mv boli">Mv boli</option>
-                <option value="Playbill">Playbill</option>
-                <option value="Tahoma">Tahoma</option>
-                <option value="The Times New Roman">The Times New Roman</option>
-                <option value="Webdings">Webdings</option>
-                <option value="Wingding">Wingding</option>
+            <select id="selectFont" name="font[]" size="10" >
+                <option id="optionAB" onclick = "changedEnable(false, true, false, false, true, true)" value="Arial Black">Arial Black</option>
+                <option id="optionC" onclick = "changedEnable(false, false, false, false, false, true)" value="Calibri">Calibri</option>
+                <option id="optionG" onclick = "changedEnable(false, false, false, false, false, true)" value="Gabriola">Gabriola</option>
+                <option id="optionMb" onclick = "changedEnable(false, false, false, false, false, true)" value="Mv boli">Mv boli</option>
+                <option id="optionPb" onclick = "changedEnable(false, false, false, false, false, true)" value="Playbill">Playbill</option>
+                <option id="optionT" onclick = "changedEnable(false, false, false, false, false, true)" value="Tahoma">Tahoma</option>
+                <option id="optionTTNW" onclick = "changedEnable(false, false, false, false, false, true)" value="The Times New Roman">The Times New Roman</option>
+                <option id="optionWe" onclick = "changedEnable(false, false, false, false, false, true)" value="Webdings">Webdings</option>
+                <option id="optionWi" onclick = "changedEnable(false, false, false, false, false, true)" value="Wingdings">Wingdings</option>
             </select>
             
             <p>Weight 
-                <input type="radio" id="RBmedium">
-                <label for="RBmedium">medium</label>
+                <input type="radio" id="RBnormal" name="weight" value= "normal">
+                <label for="RBnormal">normal</label>
            
-                <input type="radio" id="RBbold">
+                <input type="radio" id="RBbold" name="weight" value= "bold">
                 <label for="RBbold">bold</label>
            
-                <input type="radio" id="RBdemibold">
-                <label for="RBdemibold">demibold</label>
+                <input type="radio" id="RBlighter" name="weight" value= "lighter">
+                <label for="RBlighter">lighter</label>
             </p>
 
-            <p>Slant 
-                <input type="radio" id="RBroman">
-                <label for="RBroman">roman</label>
+            <p>Style 
+                <input type="radio" id="RBSnormal" name="slant" value= "normal">
+                <label for="RBSnormal">normal</label>
            
-                <input type="radio" id="RBitalic">
+                <input type="radio" id="RBitalic" name="slant" value= "italic">
                 <label for="RBitalic">italic</label>
            
-                <input type="radio" id="choice3">
-                <label for="choice3">demibold</label>
+                <input type="radio" id="RBoblique" name="slant" value= "oblique">
+                <label for="RBoblique">oblique</label>
             </p>
 
             <p>
                 Size
-                <input id="quantity" type="number" min="1" max="100">
+                <input id="quantity" type="number" min="1" max="100" value="1">
             </p>
             <p>
-                <button onclick="cancel()">Cancel</button>
-                <button onclick="ok()">Ok</button>
+                <button onclick="buttonCancel()">Cancel</button>
+                <button onclick="buttonOk()">Ok</button>
             </p>
+            
         </div>
     </body>  
 </html>
