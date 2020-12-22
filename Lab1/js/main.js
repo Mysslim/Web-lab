@@ -15,22 +15,54 @@ class Mediator {
     }
 }
 
-function changedEnable(...arrayOfAccesses) {
+function changedEnable() {
 
-    let arrayOfRadioButton = [
-        document.getElementById("RBnormal"),
-        document.getElementById("RBbold"),
-        document.getElementById("RBlighter"),
-        document.getElementById("RBSnormal"),
-        document.getElementById("RBitalic"),
-        document.getElementById("RBoblique")
-    ];
+    let div = document.getElementById("fontParametrs");
+    let arrayOfRadioButton = [];
 
-    for(let i = 0; i < arrayOfRadioButton.length; i++) {
-        arrayOfRadioButton[i].checked = false;
-        arrayOfRadioButton[i].disabled = arrayOfAccesses[i];
+    div.childNodes.forEach(node => {
+        node.childNodes.forEach(element => {
+            if (element.type == "radio") 
+                arrayOfRadioButton.push(document.getElementById(element.id));
+        })
+    });
+    
+    switch (event.currentTarget.value){
+        case "Arial Black": {
+            setEnableInRadioButton(arrayOfRadioButton[0], true);
+            setEnableInRadioButton(arrayOfRadioButton[1], false);
+            setEnableInRadioButton(arrayOfRadioButton[2], false);
+            setEnableInRadioButton(arrayOfRadioButton[3], true);
+            setEnableInRadioButton(arrayOfRadioButton[4], false);
+            setEnableInRadioButton(arrayOfRadioButton[5], false);
+            break;
+        }
+        case "Calibri": 
+        case "Gabriola": 
+        case "Mv boli": 
+        case "Playbill": 
+        case "Tahoma": 
+        case "The Times New Roman":{
+            setEnableInRadioButton(arrayOfRadioButton[0], true);
+            setEnableInRadioButton(arrayOfRadioButton[1], true);
+            setEnableInRadioButton(arrayOfRadioButton[2], false);
+            setEnableInRadioButton(arrayOfRadioButton[3], true);
+            setEnableInRadioButton(arrayOfRadioButton[4], true);
+            setEnableInRadioButton(arrayOfRadioButton[5], false);
+            break;
+        }
+        case "Webdings":
+        case "Wingdings": {
+            setEnableInRadioButton(arrayOfRadioButton[0], true);
+            setEnableInRadioButton(arrayOfRadioButton[1], false);
+            setEnableInRadioButton(arrayOfRadioButton[2], false);
+            setEnableInRadioButton(arrayOfRadioButton[3], true);
+            setEnableInRadioButton(arrayOfRadioButton[4], true);
+            setEnableInRadioButton(arrayOfRadioButton[5], false);
+        }
     }
 }
+
 function buttonOk() {
     
     let fontFamily = getSelectedOption("selectFont");
@@ -65,4 +97,10 @@ function getSelectedRadioButton(...IDRadioButtonFromGroup) {
             return radioButton.value;
     }
     return null;
+}
+
+function setEnableInRadioButton(radioButton, enable)
+{   
+    radioButton.checked = false;
+    radioButton.disabled = !enable;
 }

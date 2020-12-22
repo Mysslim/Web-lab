@@ -4,11 +4,13 @@ function cochCurve() {
             snow();
         else
             window.addEventListener('DOMContentLoaded', snow, false);
+
+            
     }
     else {
         return;
     }
-  
+
     var deg = Math.PI / 180;
     var maxflakes = 20;     
     var flakes = [];         
@@ -18,7 +20,7 @@ function cochCurve() {
     var snowingTimer;
     var invalidateMeasure = false;
   
-    var strokes = ["#6cf", "#9cf", "#99f", "#ccf", "#66f", "#3cf"];
+    var strokes = ["#6cf", "#9cf", "#99f", "#ccf", "#66f", "#3cf", "fff", "111"];
   
     function rand (n) {
         return Math.floor(n * Math.random());
@@ -26,13 +28,15 @@ function cochCurve() {
   
     // Запуск снегопада
     function snow() {
+
+        let form = document.getElementById("form");
         canvas = document.createElement('canvas');
         canvas.style.position = 'fixed';
         canvas.style.top = '0px';
         canvas.style.left = '0px';
         canvas.style.zIndex = '-10';
-  
-        document.body.insertBefore(canvas, document.body.firstChild);
+        
+        form.append(canvas);
         sky = canvas.getContext('2d');
     
         ResetCanvas();
@@ -44,8 +48,9 @@ function cochCurve() {
   
     // Сброс размеров Canvas
     function ResetCanvas() {
+        let form = document.getElementById("form");
         invalidateMeasure = true;
-        canvas.width = document.body.offsetWidth;
+        canvas.width = form.offsetWidth;
         canvas.height = window.innerHeight;
     }
   
@@ -91,9 +96,12 @@ function cochCurve() {
   
     // Создание пула снежинок
     function createSnowflake() {
-        var order = 2+rand(2);
-        var size = 10*order+rand(10);
-        var x = rand(document.body.offsetWidth);
+        let form = document.getElementById("form");
+        var order = 2 + rand(2);
+        var size = 10* order + rand(10);
+
+        var x = rand(form.offsetWidth);
+
         var y = window.pageYOffset;
         var stroke = strokes[rand(strokes.length)];
   
