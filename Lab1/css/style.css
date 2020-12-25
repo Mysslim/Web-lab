@@ -1,8 +1,8 @@
 body {
     display: grid;
     grid-template-areas: 
-    "portfolio" 
-    "form";
+    "portfolio form";
+    grid-template-columns: 70fr 30%;
     background-color: rgb(151, 145, 145);
     margin: 0;
 }
@@ -10,9 +10,14 @@ body {
 .portfolio {
     text-align: center;
     padding-bottom: 10px;
+    height: 100%;
+    background-color: rgb(136, 128, 128);
 }
 
 .form {
+    padding: 10% 10% 10% 10%;
+    position: relative;
     text-align: center;
     padding-bottom: 10px;
+    
 }

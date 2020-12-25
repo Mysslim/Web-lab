@@ -31,12 +31,14 @@ function cochCurve() {
 
         let form = document.getElementById("form");
         canvas = document.createElement('canvas');
-        canvas.style.position = 'fixed';
-        canvas.style.top = '0px';
-        canvas.style.left = '0px';
+        canvas.style.position = 'absolute';
+        canvas.style.top = 0;
+        canvas.style.left = 0;
+        canvas.style.width = "100%";
+        canvas.style.height = '100%';
         canvas.style.zIndex = '-10';
         
-        form.append(canvas);
+        form.appendChild(canvas);
         sky = canvas.getContext('2d');
     
         ResetCanvas();
@@ -51,7 +53,7 @@ function cochCurve() {
         let form = document.getElementById("form");
         invalidateMeasure = true;
         canvas.width = form.offsetWidth;
-        canvas.height = window.innerHeight;
+        canvas.height = form.offsetHeight;
     }
   
     // Отрисовка кривой Коха
